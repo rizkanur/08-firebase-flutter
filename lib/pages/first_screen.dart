@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_firebase/login_page.dart';
+import 'package:flutter_firebase/pages/login_page.dart';
 import 'package:flutter_firebase/sign_in.dart';
 
 class FirstScreen extends StatelessWidget {
@@ -14,8 +14,8 @@ class FirstScreen extends StatelessWidget {
             begin: Alignment.topRight,
             end: Alignment.bottomLeft,
             colors: [
-              Color.fromARGB(255, 143, 205, 255),
-              Color.fromARGB(255, 0, 103, 188),
+              Color.fromARGB(255, 196, 249, 110),
+              Color.fromARGB(255, 94, 217, 241),
             ],
           ),
         ),
@@ -70,7 +70,7 @@ class FirstScreen extends StatelessWidget {
                     return const LoginPage();
                   }), ModalRoute.withName('/'));
                 },
-                color: Colors.lightBlue,
+                color: Colors.blueAccent,
                 child: const Padding(
                   padding: EdgeInsets.all(8.0),
                   child: Text(

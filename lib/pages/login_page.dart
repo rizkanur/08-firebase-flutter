@@ -1,9 +1,10 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter_firebase/home.dart';
-import 'package:flutter_firebase/login_email.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_firebase/pages/first_screen.dart';
+import 'package:flutter_firebase/pages/home_screen.dart';
+import 'package:flutter_firebase/pages/login_email.dart';
 import 'package:flutter_firebase/sign_in.dart';
-import 'package:flutter_firebase/first_screen.dart';
+
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
 
@@ -35,7 +36,7 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   Widget _signInButton2() {
-    return RaisedButton(
+    return OutlineButton(
       splashColor: Colors.grey,
       onPressed: () {
         Navigator.of(context).push(
@@ -51,7 +52,7 @@ class _LoginPageState extends State<LoginPage> {
                       child: Text('Something went wrong ${snapshot.error}'),
                     );
                   } else if (snapshot.hasData) {
-                    return const Home();
+                    return const HomeScreen();
                   } else {
                     return const LoginEmail();
                   }
@@ -63,6 +64,7 @@ class _LoginPageState extends State<LoginPage> {
       },
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
       highlightElevation: 0,
+      borderSide: const BorderSide(color: Colors.grey),
       child: Padding(
         padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
         child: Row(
@@ -86,7 +88,7 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   Widget _signInButton() {
-    return RaisedButton(
+    return OutlineButton(
       splashColor: Colors.grey,
       onPressed: () {
         signInWithGoogle().then((result) {
@@ -103,6 +105,7 @@ class _LoginPageState extends State<LoginPage> {
       },
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
       highlightElevation: 0,
+      borderSide: const BorderSide(color: Colors.grey),
       child: Padding(
         padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
         child: Row(
